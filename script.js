@@ -1,4 +1,4 @@
-
+var allStudents = []
 function submit() {
     var firstname = document.getElementById('firstname').value
     var lastname = document.getElementById('lastname').value
@@ -9,7 +9,8 @@ function submit() {
         alert("haba, haba, you no dey see")
     } else {
         var studentObj = {firstname,lastname,mailphone,password}
-        console.log(studentObj);
+        allStudents.push(studentObj)
+        console.log(allStudents);
     
         document.getElementById('firstname').value = ''
         document.getElementById('lastname').value = ''
