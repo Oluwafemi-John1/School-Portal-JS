@@ -11,9 +11,9 @@ function submit() {
         var studentObj = {firstname,lastname,mailphone,password}
         console.log(studentObj);
     
-        firstname = ''
-        lastname = ''
-        mailphone = ''
-        password = ''
+        document.getElementById('firstname').value = ''
+        document.getElementById('lastname').value = ''
+        document.getElementById('mailphone').value = ''
+        document.getElementById('password').value = ''
     }
 }
