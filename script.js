@@ -15,6 +15,9 @@ function submit() {
         var pushedStudent = allStudents.push(studentObj)
         if(pushedStudent) {
             successMessage.style.display = 'block'
+            setTimeout(()=>{
+            successMessage.style.display = 'none'
+            }, 3000)
         } else {
             alert('failed to submit')
         }
