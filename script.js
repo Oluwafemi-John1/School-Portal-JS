@@ -12,7 +12,12 @@ function submit() {
         }, 5000);
     } else {
         var studentObj = {firstname,lastname,mailphone,password}
-        allStudents.push(studentObj)
+        var pushedStudent = allStudents.push(studentObj)
+        if(pushedStudent) {
+            successMessage.style.display = 'block'
+        } else {
+            alert('failed to submit')
+        }
         console.log(allStudents);
     
         document.getElementById('firstname').value = ''
