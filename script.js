@@ -14,10 +14,13 @@ function submit() {
         var studentObj = {firstname,lastname,mailphone,password}
         var pushedStudent = allStudents.push(studentObj)
         if(pushedStudent) {
+            displayStudents()
             successMessage.style.display = 'block'
-            setTimeout(()=>{
-            successMessage.style.display = 'none'
-            }, 3000)
+            // setTimeout(()=>{
+            //     successMessage.style.display = 'none'
+            // }, 3000)
+            localStorage.setItem('allstudents', JSON.stringify(allStudents))
+            window.location.href = 'dashboard.html'
         } else {
             alert('failed to submit')
         }
@@ -27,5 +30,18 @@ function submit() {
         document.getElementById('lastname').value = ''
         document.getElementById('mailphone').value = ''
         document.getElementById('password').value = ''
+    }
+}
+
+
+function displayStudents() {
+    if (allStudents.length > 0) {
+        for(i=0; i < allStudents.length; i++) {
+            console.log(allStudents[i].firstname);
+        }
+        
+        allStudents.map((student, index)=>{
+            console.log(student.firstname);
+        })
     }
 }
